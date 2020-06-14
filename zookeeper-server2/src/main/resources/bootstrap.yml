@@ -1,0 +1,14 @@
+server:
+  port: 8083
+spring:
+  application:
+    name: zk-server2
+  cloud:
+    zookeeper:
+      connect-string: 192.168.56.10:2181
+      discovery:
+        instance-id: zk-server2
+        uri-spec: http://lolcahost:${server.port}
+logging:
+  root: info
+  com.shenjies88.practice.zkserver2: debug

@@ -1,0 +1,14 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: zk-route
+  cloud:
+    zookeeper:
+      connect-string: "192.168.56.10:2181"
+      discovery:
+        instance-id: zk-route
+        register: false
+logging:
+  root: info
+  com.shenjies88.practice.zkserver1: debug
