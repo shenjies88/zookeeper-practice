@@ -26,7 +26,7 @@ public class ZookeeperRouteApplication {
     public List<List<ServiceInstance>> getServiceUrl() {
         List<String> services = discoveryClient.getServices();
         List<List<ServiceInstance>> instances = new ArrayList<>();
-        services.stream().filter(e -> !e.equals("root")).forEach(e ->
+        services.stream().filter(e -> !"root".equals(e)).forEach(e ->
                 instances.add(discoveryClient.getInstances(e))
         );
         return instances;
